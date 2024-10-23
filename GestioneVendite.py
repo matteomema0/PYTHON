@@ -112,7 +112,7 @@ class Ordine():
     # [somma importi televisori, somma importi frigoriferi, somma importi totali ]
     #...
 
-    return([self.sommaT,self.sommaF,self.sommaT+self.sommaF])
+    return([sommaT,sommaF,sommaT+sommaF])
   
 t2 = Televisore(2,"Fornitore 2","Samsung",1000,5,80,"Schermo curvo")
 f1 = Frigorifero(3,"Fornitore 3","Bosch",750,12,'790x2000x600','Ultra')
@@ -137,7 +137,7 @@ class Ordini():
   def __init__(self,nome_negozio,codice_negozio):
     self.nome_negozio=nome_negozio
     self.codice_negozio=codice_negozio
-    lista_ordini=[]
+    self.lista_ordini=[]
     #16 Implementa il costruttore
 
   def aggiungi_ordine(self,ordine):
@@ -160,7 +160,7 @@ class Ordini():
     totT=0
     totF=0
     tot=0
-    for vendita in self.lista_vendite:
+    for vendita in self.lista_ordini:
       importi=vendita.dettaglio_vendita()
       totT+=importi[0]
       totF+=importi[1]
